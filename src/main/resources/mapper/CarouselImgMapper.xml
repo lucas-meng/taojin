@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.wmyskxz.mapper.CarouselImgMapper">
+    
+    <insert id="save"  parameterType="cn.wmyskxz.pojo.Carousel">
+    	insert into carousel_img(carousel_imgs) values (#{carousel_imgs})
+    </insert>
+    <select id="list" resultType="cn.wmyskxz.pojo.Carousel">
+        select * from carousel_img order by carousel_id desc
+    </select>
+    <delete id="del">
+       	delete from carousel_img where carousel_id = #{id}
+    </delete>
+</mapper>
